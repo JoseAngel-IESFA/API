@@ -1,0 +1,38 @@
+<!--<div class="container">
+    <h1>This is our products:</h1>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (product of productList; track $index) {
+            <tr>
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.title}}</td>
+                <td>{{product.price | currency}}</td>
+                <td>{{product.description}}</td>
+                <td><button type="button" class="btn btn-outline-primary" (click)="navegate(product.id)">Details</button></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>-->
+<div class="container">
+    <h2 class="text-center"> Galería de Perros </h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let img of dogImages">
+        <div class="card shadow-lg">
+          <img [src]="img" class="card-img-top" alt="Imagen de perro">
+          <div class="card-body text-center">
+            <p class="card-text">Un hermoso perrito </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
