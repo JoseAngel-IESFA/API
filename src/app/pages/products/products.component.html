@@ -24,15 +24,13 @@
     </table>
 </div>-->
 <div class="container">
-    <h2 class="text-center"> Galería de Perros </h2>
-    <div class="row">
-      <div class="col-md-4 mb-4" *ngFor="let img of dogImages">
-        <div class="card shadow-lg">
-          <img [src]="img" class="card-img-top" alt="Imagen de perro">
-          <div class="card-body text-center">
-            <p class="card-text">Un hermoso perrito </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h1 class="text-center">Imágenes Aleatorias de Perros</h1>
+
+  <mat-grid-list cols="3" rowHeight="300px" gutterSize="10px">
+    <mat-grid-tile *ngFor="let dog of dogs">
+      <mat-card class="mat-elevation-z4">
+        <img mat-card-image [src]="dog.image" [alt]="'Dog image'">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

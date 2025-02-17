@@ -1,4 +1,26 @@
-.general-styles{
+.general-styles {
     background-color: black;
     color: white;
-}
+    min-height: 100vh;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  
+  mat-toolbar {
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
