@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { IProduct } from '../../models/product.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
     selector: 'app-product-detail',
-    imports: [CommonModule],
+    standalone: true,
+    imports: [CommonModule, MatCardModule, MatProgressSpinnerModule],
     templateUrl: './product-detail.component.html',
-    styleUrl: './product-detail.component.css'
+    styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-
   loading: boolean = true;
   public product?: IProduct;
 
@@ -21,12 +23,9 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this._route.params.subscribe(params => {
       this._apiService.getProduct(params['id']).subscribe((data: IProduct) => {
-        this.product = data
+        this.product = data;
         this.loading = false;
       });
-    }
-    )
+    });
   }
-
 }
-

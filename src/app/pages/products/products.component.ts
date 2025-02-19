@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -13,8 +13,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 })
 export class ProductsComponent implements OnInit {
   dogs: any[] = [];
-
-  constructor(private apiService: ApiService) {}
+  private apiService = inject(ApiService);
 
   ngOnInit(): void {
     this.apiService.getRandomDogs().subscribe((data) => {

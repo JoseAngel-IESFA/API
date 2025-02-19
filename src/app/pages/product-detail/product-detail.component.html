@@ -1,16 +1,16 @@
 <div class="container">
     @if (loading) {
-        <h5>Loading...</h5>
-        }
-        
-        @if (!loading) {
-        <div class="card" style="width: 18rem;">
-            <img src="{{product?.image}}" class="card-img-top" alt="{{product?.title}}">
-            <div class="card-body">
-                <h4>{{product?.price | currency }}</h4>
-                <h5 class="card-title">{{product?.title}}</h5>
-                <p class="card-text">{{product?.description}}</p>
-            </div>
-        </div>
-        }
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    }
+    
+    @if (!loading && product) {
+        <mat-card class="product-card">
+            <img mat-card-image [src]="product.image" [alt]="product.title">
+            <mat-card-content>
+                <mat-card-title>{{product.title}}</mat-card-title>
+                <h3>{{product.price | currency}}</h3>
+                <p>{{product.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    }
 </div>
